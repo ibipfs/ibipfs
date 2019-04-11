@@ -1,0 +1,10 @@
+self.onload = () => { ibipfs() }
+
+function ibipfs() {
+    let scriptElem = document.createElement('script')
+
+    scriptElem.setAttribute('id', 'ipfs')
+    scriptElem.setAttribute('src', 'https://unpkg.com/ipfs/dist/index.min.js')
+
+	document.body.appendChild(scriptElem)
+}
