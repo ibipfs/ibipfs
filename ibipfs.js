@@ -97,7 +97,6 @@
 	    .then((result) => {
 	    	resolve('loadJSIPFS: ' + result)
 	    }, (reason) => {
-	    	//reject(reason)
 	    	fetch(_i.jsipfs.local)// fallback: trying local
 	    		.then((response) => {
 		    	    console.log('local provider status: ' + response.status)
@@ -133,13 +132,27 @@
 	    .catch((err) => { console.log(err) })
 	}
 
-	function optimizeOptions(resolve, reject) { setTimeout(resolve, 600, 'optimizeOptions') }
+	function optimizeOptions(resolve, reject) { setTimeout(resolve, 600, 'optimizeOptions: not implemented yet, ignored!') }
 
-	function attainGateways(resolve, reject) { setTimeout(resolve, 300, 'attainGateways') }
+	function attainGateways(resolve, reject) { setTimeout(resolve, 300, 'attainGateways: not implemented yet, ignored!') }
 
-	function byIPFS(resolve, reject) { setTimeout(resolve, 30000, 'byIPFS') }
+	function byIPFS(resolve, reject) { 
+		setTimeout(reject, 30000, 'byIPFS not implemented yet, please fallback!')
 
-	function byGIT(resolve, reject) { setTimeout(resolve, 60000, 'byGIT') }
+		/*let channels = _i.jsipfs.ipfs
+		let found
+		let racers = []
+
+		Promise
+		.race(racers)
+		.then((result) => {
+	    	resolve('byIPFS@' + result)
+	    }, (reason) => {
+	    	reject('byIPFSRejection: ' + reason)
+	    })*/
+	}
+
+	function byGIT(resolve, reject) { setTimeout(reject, 30000, 'byGIT not implemented yet, please fallback!') }
 
 	function byCDN(resolve, reject) { // fatest
 		let providers = _i.jsipfs.cdn
