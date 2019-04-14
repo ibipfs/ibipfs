@@ -1,7 +1,7 @@
 /* Be All I(PFS) Can Be In Web Browser */
 /**
  * --------------------------------------------------------------------------
- * IBIPFS (v0.0.3): ibipfs.js
+ * IBIPFS (v0.1.0): ibipfs.js
  * MIT
  * --------------------------------------------------------------------------
  */
@@ -9,9 +9,9 @@
 (() => {
 	void{} // Start with Unknown
 
-	const VERSION = 'v0.0.3'
+	const VERSION = 'v0.1.0'
 
-	const STORY = 'apriori: loading the jsipfs from the fatest CDN, dynamically, fallback to local if CDN failed'
+	const STORY = 'apriori: loading the jsipfs from the fatest providers, dynamically, fallback to local if all others failed'
 
 	// setting
 	const i = 'QmRftzEbreVTdWSwbwSogVoNSbs4XEtX2TJewFJkh2dTvB'
@@ -224,26 +224,33 @@
 				ipfsNode.on('error', err => console.log('Error making ipfs instance: ' + err))
 
 				ipfsNode.on('init', () => {
-					console.log('Initialized ipfs repo: ' + ipfsNode.repo.version())
+					ipfsNode
+					.repo
+					.version()
+					.then(version => console.log('Initialized ipfs repo with version: ' + version), err => console.error(err))
 
 					ipfsNode
 					.start()
 					.then((result) => {
 						ipfsNode.on('start', () => {
-							console.log('Started ipfs instance: ' + ipfsNode.id())
+							ipfsNode
+							.id()
+					        .then(identity => console.log('Initialized ipfs instance: ' + JSON.stringify(identity)), err => console.error(err))
 						})
 
 						ipfsNode.on('stop', () => {
-							console.log('Stopped ipfs instance' + ipfsNode.id())
-						})
-
-						ipfsNode.on('ready', () => {
-							window.ibipfs = ipfsNode
-							console.log('ipfsNode ready: ' + JSON.stringify(ipfsNode._options))
-							resolve('window.ibipfs is functioning as JSIPFS node :)')
-						})
+							ipfsNode
+							.id()
+					        .then(identity => console.log('Stopped ipfs instance: ' + JSON.stringify(identity)), err => console.error(err))
+						})					
 					}, reason => reject(reason))
 				})
+
+				ipfsNode.on('ready', () => {
+					window.ibipfs = ipfsNode
+					resolve('window.ibipfs is functioning as JSIPFS node :)')
+				})		
+
 			})
 			.catch(err => console.log(err))
 		}
