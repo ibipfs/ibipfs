@@ -1,7 +1,7 @@
 /* Be All I(PFS) Can Be In Web Browser */
 /**
  * --------------------------------------------------------------------------
- * IBIPFS (v0.0.1): ibipfs.js
+ * IBIPFS (v0.0.3): ibipfs.js
  * MIT
  * --------------------------------------------------------------------------
  */
@@ -9,9 +9,9 @@
 (() => {
 	void{} // Start with Unknown
 
-	const VERSION = 'v0.0.1'
+	const VERSION = 'v0.0.3'
 
-	const STORY = 'apriori: loading the jsipfs from the fatest CDN, dynamically'
+	const STORY = 'apriori: loading the jsipfs from the fatest CDN, dynamically, fallback to local if CDN failed'
 
 	// setting
 	const i = 'QmRftzEbreVTdWSwbwSogVoNSbs4XEtX2TJewFJkh2dTvB'
@@ -24,7 +24,8 @@
 				ipns: ['QmPfTZQK7EUABn2RhhxLnEBzQyJCvwvmcF2GPmZ2CbSs4X']
 			},
 			cdn: ['https://unpkg.com/ipfs/dist/index.min.js', 'https://cdn.jsdelivr.net/npm/ipfs/dist/index.min.js'],
-			git: ['https://github.com/ipfs/js-ipfs.git']
+			git: ['https://github.com/ipfs/js-ipfs.git'],
+			local: 'ipfs.min.js'
 		},
 		options: {
 		    init: true,
@@ -96,7 +97,38 @@
 	    .then((result) => {
 	    	resolve('loadJSIPFS: ' + result)
 	    }, (reason) => {
-	    	reject(new Error(reason))
+	    	//reject(reason)
+	    	fetch(_i.jsipfs.local)// fallback: trying local
+	    		.then((response) => {
+		    	    console.log('local provider status: ' + response.status)
+
+				    if(response.ok) {
+				    	response
+				    	.blob()
+				    	.then((theBlob) => {
+				    		if(!loading) {
+								loading = response.url
+
+							    console.log('loading: ' + loading)
+
+							    const scriptElem = document.createElement('script')
+
+								scriptElem.src = loading
+
+								scriptElem.onload = () => {
+
+							        console.log('loaded: ' + loading)
+
+									resolve(loading)
+								}
+
+								document.head.appendChild(scriptElem)
+							} else {
+								console.log(provider + ': loading already by: ' + loading)
+							}
+				    	})
+				    }
+	            }, reason => reject(reason))
 	    })
 	    .catch((err) => { console.log(err) })
 	}
@@ -105,9 +137,9 @@
 
 	function attainGateways(resolve, reject) { setTimeout(resolve, 300, 'attainGateways') }
 
-	function byIPFS(resolve, reject) { setTimeout(resolve, 6000, 'byIPFS') }
+	function byIPFS(resolve, reject) { setTimeout(resolve, 30000, 'byIPFS') }
 
-	function byGIT(resolve, reject) { setTimeout(resolve, 30000, 'byGIT') }
+	function byGIT(resolve, reject) { setTimeout(resolve, 60000, 'byGIT') }
 
 	function byCDN(resolve, reject) { // fatest
 		let providers = _i.jsipfs.cdn
@@ -180,25 +212,25 @@
 
 				ipfsNode.on('init', () => {
 					console.log('Initialized ipfs repo: ' + ipfsNode.repo.version())
+
+					ipfsNode
+					.start()
+					.then((result) => {
+						ipfsNode.on('start', () => {
+							console.log('Started ipfs instance: ' + ipfsNode.id())
+						})
+
+						ipfsNode.on('stop', () => {
+							console.log('Stopped ipfs instance' + ipfsNode.id())
+						})
+
+						ipfsNode.on('ready', () => {
+							window.ibipfs = ipfsNode
+							console.log('ipfsNode ready: ' + JSON.stringify(ipfsNode._options))
+							resolve('window.ibipfs is functioning as JSIPFS node :)')
+						})
+					}, reason => reject(reason))
 				})
-
-				ipfsNode
-				.start()
-				.then((result) => {
-					ipfsNode.on('start', () => {
-						console.log('Started ipfs instance: ' + ipfsNode.id())
-					})
-
-					ipfsNode.on('stop', () => {
-						console.log('Stopped ipfs instance' + ipfsNode.id())
-					})
-
-					ipfsNode.on('ready', () => {
-						window.ibipfs = ipfsNode
-						console.log('ipfsNode ready: ' + JSON.stringify(ipfsNode._options))
-						resolve('window.ibipfs is functioning as JSIPFS node :)')
-					})
-				}, reason => reject(reason))
 			})
 			.catch(err => console.log(err))
 		}
