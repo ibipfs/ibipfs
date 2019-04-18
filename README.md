@@ -1,4 +1,4 @@
-# IBIPFS is the distributed web in browser.
+# IBIPFS is the distributed web in browser. `v0.1.1`
 
 ## Foundation
 

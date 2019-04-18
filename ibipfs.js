@@ -1,7 +1,7 @@
 /* Be All I(PFS) Can Be In Web Browser */
 /**
  * --------------------------------------------------------------------------
- * IBIPFS (v0.1.0): ibipfs.js
+ * IBIPFS (v0.1.1): ibipfs.js
  * MIT
  * --------------------------------------------------------------------------
  */
@@ -9,7 +9,7 @@
 (() => {
 	void{} // Start with Unknown
 
-	const VERSION = 'v0.1.0'
+	const VERSION = 'v0.1.1'
 
 	const STORY = 'apriori: loading the jsipfs from the fatest providers, dynamically, fallback to local if all others failed'
 
@@ -74,13 +74,13 @@
 
 	let loading
 
-	const aprioris = [
-		new Promise(optimizeOptions),
-		new Promise(attainGateways),
-	    new Promise(loadJSIPFS)
-	]
-
 	function apriori(conditions) {
+		const aprioris = [
+			new Promise(optimizeOptions),
+			new Promise(attainGateways),
+		    new Promise(loadJSIPFS)
+		]
+
 		return Promise.all(aprioris)
 	}
 
@@ -97,6 +97,8 @@
 	    .then((result) => {
 	    	resolve('loadJSIPFS: ' + result)
 	    }, (reason) => {
+	    	console.log('Trying local fallback since dynamically loading JSIPFS failed: ' + reason)
+	    	//_i&&_i.jsipfs&&_i.jsipfs.local&&
 	    	fetch(_i.jsipfs.local)// fallback: trying local
 	    		.then((response) => {
 		    	    console.log('local provider status: ' + response.status)
@@ -209,54 +211,62 @@
 	}
 
 	// being
-	apriori()
-	.then((conditions) => {
-		console.log('apriori: ' + conditions)
+	let finalConfirm = confirm('IBIPFS(as JSIPFS node) would like to be working for you :)')
 
-		if(!window.Ipfs) {
-			alert('window.Ipfs not found as promised!')
-		} else {
-			console.log('JSIPFS loaded as the window.Ipfs, making instance ...')
+	if(finalConfirm) {
+		apriori()
+		.then((conditions) => {
+			console.log('IBIPFS apriori: ' + conditions)
 
-			new Promise((resolve, reject) => {
-				ipfsNode = new window.Ipfs(_i.options)
+			if(!window.Ipfs) {
+				alert('window.Ipfs not found as promised!')
+			} else {
+				console.log('JSIPFS loaded as the window.Ipfs, making instance ...')
 
-				ipfsNode.on('error', err => console.log('Error making ipfs instance: ' + err))
+				new Promise((resolve, reject) => {
+					ipfsNode = new window.Ipfs(_i.options)
 
-				ipfsNode.on('init', () => {
-					ipfsNode
-					.repo
-					.version()
-					.then(version => console.log('Initialized ipfs repo with version: ' + version), err => console.error(err))
+					ipfsNode.on('error', err => console.log('Error making ipfs instance: ' + err))
 
-					ipfsNode
-					.start()
-					.then((result) => {
-						ipfsNode.on('start', () => {
-							ipfsNode
-							.id()
-					        .then(identity => console.log('Initialized ipfs instance: ' + JSON.stringify(identity)), err => console.error(err))
-						})
+					ipfsNode.on('init', () => {
+						ipfsNode
+						.repo
+						.version()
+						.then(version => console.log('Initialized ipfs repo with version: ' + version), err => console.error(err))
 
-						ipfsNode.on('stop', () => {
-							ipfsNode
-							.id()
-					        .then(identity => console.log('Stopped ipfs instance: ' + JSON.stringify(identity)), err => console.error(err))
-						})					
-					}, reason => reject(reason))
+						ipfsNode
+						.start()
+						.then((result) => {
+							ipfsNode.on('start', () => {
+								ipfsNode
+								.id()
+						        .then(identity => console.log('Started ipfs instance: ' + JSON.stringify(identity)), err => console.error(err))
+							})
+
+							ipfsNode.on('stop', () => {
+								ipfsNode
+								.id()
+						        .then(identity => console.log('Stopped ipfs instance: ' + JSON.stringify(identity)), err => console.error(err))
+							})					
+						}, reason => reject(reason))
+					})
+
+					ipfsNode.on('ready', () => {
+						window.ibipfs = ipfsNode
+						//alert('IBIPFS(as JSIPFS node) is ready for you! :)')
+						console.log('window.ibipfs is functioning as JSIPFS node ...')
+						resolve('window.ibipfs is functioning as JSIPFS node ...')
+					})		
+
 				})
-
-				ipfsNode.on('ready', () => {
-					window.ibipfs = ipfsNode
-					resolve('window.ibipfs is functioning as JSIPFS node :)')
-				})		
-
-			})
-			.catch(err => console.log(err))
-		}
-	}, (reason) => {
-		console.log('ibipfs failed: ' + reason)
-	})
-	.catch(err => console.log(err))
-	.finally(() => console.log('ibipfs finished working'))
+				.catch(err => console.log(err))
+			}
+		}, (reason) => {
+			console.log('ibipfs failed: ' + reason)
+		})
+		.catch(err => console.log(err))
+		.finally(() => console.log('ibipfs finished working'))
+	} else {
+		console.log('IBIPFS is cancelled.')
+	}
 })()
