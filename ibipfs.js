@@ -28,44 +28,43 @@
 			local: 'ipfs.min.js'
 		},
 		options: {
-		    init: true,
-	        start: false,
-	        EXPERIMENTAL: {},
+		  init: true,
+	    start: false,
+	    EXPERIMENTAL: {},
 			preload: {
 				enabled: false,
 				addresses: [
-				  	'/dnsaddr/service.edening.net/https',
-			        '/dnsaddr/node0.preload.ipfs.io/https',
-			        '/dnsaddr/node1.preload.ipfs.io/https'
-			    ]
+				  '/dnsaddr/service.edening.net/https',
+			    '/dnsaddr/node0.preload.ipfs.io/https',
+			    '/dnsaddr/node1.preload.ipfs.io/https'
+			  ]
 			},
-		    config: {
-		    	Addresses: {
-				    Swarm: [
-				    ],
-				    API: '',
-				    Gateway: ''
+		  config: {
+		    Addresses: {
+				  Swarm: [],
+				  API: '',
+				  Gateway: ''
 				},
 				Discovery: {
-				    MDNS: {
-				      Enabled: false,
-				      Interval: 10
-				    },
-				    webRTCStar: {
-				      Enabled: true
-				    }
+				  MDNS: {
+				    Enabled: false,
+				    Interval: 10
+				  },
+				  webRTCStar: {
+				    Enabled: true
+				  }
 				},
 				Bootstrap: [
-				    '/dns4/ams-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLer265NRgSp2LA3dPaeykiS1J6DifTC88f5uVQKNAd',
-				    '/dns4/lon-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLMeWqB7YGVLJN3pNLQpmmEk35v6wYtsMGLzSr5QBU3',
-				    '/dns4/sfo-3.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLPppuBtQSGwKDZT2M73ULpjvfd3aZ6ha4oFGL1KrGM',
-				    '/dns4/sgp-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLSafTMBsPKadTEgaXctDQVcqN88CNLHXMkTNwMKPnu',
-				    '/dns4/nyc-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLueR4xBeUbY9WZ9xGUUxunbKWcrNFTDAadQJmocnWm',
-				    '/dns4/service.edening.net/tcp/443/wss/ipfs/QmdC5xvY5SKnCzz4b4wLhwDLzRW3tbpyMjxqM3gay9WTVF',
-			        '/dns4/node0.preload.ipfs.io/tcp/443/wss/ipfs/QmZMxNdpMkewiVZLMRxaNxUeZpDUb34pWjZ1kZvsd16Zic',
-			        '/dns4/node1.preload.ipfs.io/tcp/443/wss/ipfs/Qmbut9Ywz9YEDrz8ySBSgWyJk41Uvm2QJPhwDJzJyGFsD6'
+				  '/dns4/ams-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLer265NRgSp2LA3dPaeykiS1J6DifTC88f5uVQKNAd',
+				  '/dns4/lon-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLMeWqB7YGVLJN3pNLQpmmEk35v6wYtsMGLzSr5QBU3',
+				  '/dns4/sfo-3.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLPppuBtQSGwKDZT2M73ULpjvfd3aZ6ha4oFGL1KrGM',
+				  '/dns4/sgp-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLSafTMBsPKadTEgaXctDQVcqN88CNLHXMkTNwMKPnu',
+				  '/dns4/nyc-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLueR4xBeUbY9WZ9xGUUxunbKWcrNFTDAadQJmocnWm',
+				  '/dns4/service.edening.net/tcp/443/wss/ipfs/QmdC5xvY5SKnCzz4b4wLhwDLzRW3tbpyMjxqM3gay9WTVF',
+			    '/dns4/node0.preload.ipfs.io/tcp/443/wss/ipfs/QmZMxNdpMkewiVZLMRxaNxUeZpDUb34pWjZ1kZvsd16Zic',
+			    '/dns4/node1.preload.ipfs.io/tcp/443/wss/ipfs/Qmbut9Ywz9YEDrz8ySBSgWyJk41Uvm2QJPhwDJzJyGFsD6'
 				]
-		    }
+		  }
 		}
 	}
 
@@ -253,8 +252,12 @@
 
 					ipfsNode.on('ready', () => {
 						window.ibipfs = ipfsNode
-						//alert('IBIPFS(as JSIPFS node) is ready for you! :)')
+						window.ibipfs.Ipfs = window.Ipfs
+						
 						console.log('window.ibipfs is functioning as JSIPFS node ...')
+
+						window.dispatchEvent(new Event('ibipfs'))
+
 						resolve('window.ibipfs is functioning as JSIPFS node ...')
 					})		
 
