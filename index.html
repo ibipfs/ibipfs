@@ -3,10 +3,74 @@
 <head>
   <meta charset="utf-8" name="publisher" content="QmRftzEbreVTdWSwbwSogVoNSbs4XEtX2TJewFJkh2dTvB">
   <title>IBIPFS is the distributed web in browser.</title>
-  <script src='ibipfs.js'></script>
-  <script src="iEvolve.js"></script>
+  <link rel="icon" href="fav.png">
 </head>
 <body>
-  <img onclick='iEvolve()' onkeydown='iEvolve()' src='dao.jpg' width='100%' height='window.screen.height'></img>
+  <!-- ibipfs usage sample -->
+  <script type="text/javascript">
+  	function loadFile(file, onloadFunction) {
+			const fileType = (file.scriptURL || file.type === 'text/javascript') ? 'script' : (file.type === 'text/css' ? 'style' : undefined)
+
+			if (!fileType) {
+				return
+			}
+
+		  let newLoadedElem
+
+      switch (fileType) {
+      	case 'script':
+      	  newLoadedElem = document.createElement('script');
+      		newLoadedElem.type = 'text/javascript'
+      		document.currentScript ? 
+				  document.currentScript.parentNode.insertBefore(newLoadedElem, document.currentScript) :
+				  document.body.append(newLoadedElem)
+				  newLoadedElem.src = file.scriptURL || URL.createObjectURL(file.slice())
+				  break
+      	case 'style':
+      	  newLoadedElem = document.createElement('style');
+      		newLoadedElem.type = 'text/css'
+      		new Response(file.slice())
+      		.text()
+      		.then((content) => {
+      			newLoadedElem.innerHTML = content
+      		})
+      		document.head.append(newLoadedElem)
+      		break
+      }
+
+		  newLoadedElem.onerror = () => {
+		  	throw new URIError("The script " + oError.target.src + " didn't load correctly.")
+		  }
+
+		  if (onloadFunction) {
+		  	newLoadedElem.onload = onloadFunction
+		  }
+		}
+
+  	window.onload = () => {
+  		loadFile({ "scriptURL": "ibipfs.js"})
+
+      window.addEventListener("ibipfs", () => {
+      	window.ibipfs && window.ibipfs.on('start', () => {
+	      	window.ibipfs
+		    		.cat('QmZCWqxc3fzvqVLhL64yweZhuWoLeqP5iUNtLqkb5rX7NR', (err, file) => {
+		  				if (err) {
+		  					console.log('Error: ' + err)
+		  					return
+		  				}
+
+              let imgElem = new Image();
+
+		          imgElem.setAttribute('width', '100%')
+		          imgElem.setAttribute('height', 'window.screen.height')
+		          imgElem.src = 'data:image/jpg;base64,' + file.toString('base64')
+
+		  				document.body.prepend(imgElem)
+		  			})
+	      })
+      })
+  	}
+  </script>
+  <!-- ibipfs usage sample -->
 </body>
 </html>
