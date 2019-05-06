@@ -1,4 +1,4 @@
-# IBIPFS is the distributed web in browser. `v1.0.0`
+# IBIPFS is the distributed web in browser.
 
 ## Foundation
 
@@ -6,7 +6,7 @@
 - * JS-IPFS(Browser Available Portion) :eyes: [interface-js-ipfs-core](https://github.com/ipfs/interface-js-ipfs-core)
 
 ## Forwarding
-:doing: Local Offline First
+:doing: Local Offline First `v1.0.0`
 - Pillars
 - * [Workbox: JavaScript libraries for Progressive Web Apps](https://github.com/GoogleChrome/workbox) // :eyes: [IPFS runs as a Service Worker!](https://github.com/ipfs/in-web-browsers/issues/55)
 - * ?[LocalForage: Offline storage, improved. Wraps IndexedDB, WebSQL, or localStorage using a simple but powerful API.](https://github.com/localForage/localForage) // ? with the IPFS Storage API ?
