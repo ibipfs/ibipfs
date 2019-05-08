@@ -1,20 +1,20 @@
 /* Be All I(PFS) Can Be In Web Browser */
 /**
  * --------------------------------------------------------------------------
- * IBIPFS (v0.1.9): ibipfs.js
+ * IBIPFS (v0.2.0): ibipfs.js
  * MIT
  * --------------------------------------------------------------------------
  */
-
-(() => {
-
+(function (window, document) {
 	void{} // Start with Unknown
+
+	window.ibipfs = {}
 
 	const ESSENCE = 'Be All I(PFS) Can Be In Web Browser'
 
-	const VERSION = 'v0.1.9'
+	const VERSION = 'v0.2.0'
 
-	const STORY = 'local jsipfs fallback'
+	const STORY = 'window.ibipfs'
 
 	// setting
 	const i = 'QmRftzEbreVTdWSwbwSogVoNSbs4XEtX2TJewFJkh2dTvB'
@@ -196,7 +196,7 @@
 			console.log('IBIPFS apriori: ' + conditions)
 
 			if(!window.Ipfs) {
-				alert('window.Ipfs not found as promised!')
+				console.log('window.Ipfs not found as promised!')
 			} else {
 				console.log('JSIPFS loaded as the window.Ipfs, making instance ...')
 
@@ -238,11 +238,11 @@
                   	if (err) {
                   		console.log('Error@window.ibipfs: ' + err)
                   	} else {
-                  		alert('IBIPFS: As the verification, added metadata @ /ipfs/' + res[0].hash + ' : ' + file.toString())
+                  		console.log('IBIPFS: As the verification, added metadata @ /ipfs/' + res[0].hash + ' : ' + file.toString())
                   	}
                   })
 					      })
-					      .catch(err => alert('Oops! Error: ' + err))
+					      .catch(err => console.log('Oops! Error: ' + err))
 							})
 
 							ipfsNode.on('stop', () => {
@@ -262,8 +262,10 @@
 		.finally(() => console.log('ibipfs finished working'))
 	} else {
 		console.log('IBIPFS is cancelled.')
+
+		window.dispatchEvent(new Event('ibipfs_cancel'))
 	}
-})()
+}(window, document));
 
 /**
  * --------------------------------------------------------------------------

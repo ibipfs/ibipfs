@@ -48,8 +48,6 @@
 		}
 
   	window.onload = () => {
-  		loadFile({ "scriptURL": "ibipfs.js"})
-
       window.addEventListener("ibipfs", () => {
       	window.ibipfs && window.ibipfs.on('start', () => {
 	      	window.ibipfs
@@ -69,6 +67,8 @@
 		  			})
 	      })
       })
+      
+      loadFile({ "scriptURL": "ibipfs.js"})
   	}
   </script>
   <!-- ibipfs usage sample -->
