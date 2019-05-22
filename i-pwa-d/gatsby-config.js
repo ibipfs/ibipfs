@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'SNS-Fashion'
+    title: 'IBIPFS: Be All I(PFS) Can Be In Web Browser'
   },
   pathPrefix: '__GATSBY_IPFS_PATH_PREFIX__',
   plugins: [
