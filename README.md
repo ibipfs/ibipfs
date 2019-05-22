@@ -6,6 +6,26 @@
 - _Bridging_ the gap between `IPFS` and `Browser`
 - _Empowering_ the person with `facility`
 
+### Usage
+
+Step 1: Make sure you clone `recursively`
+
+```
+$ git clone https://github.com/ibipfs/ibipfs.git --recursive
+```
+
+Step 2: Install its dependencies
+
+Navigate to the root of the directory you cloned and run:
+
+```
+$ npm install
+```
+
+Step 3: Run the scripts as needed
+
+:eyes: `package.json`
+
 ### Forwarding
 
 _**doing**_ `v 0.3.*` - transform[facility]
