@@ -1,0 +1,4 @@
+[submodule "service-worker-gateway"]
+	path = service-worker-gateway
+	url = https://github.com/ibipfs/swg.git
+

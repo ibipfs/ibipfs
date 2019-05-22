@@ -1,4 +1,9 @@
 /* Be All I(PFS) Can Be In Web Browser */
+/*
+ * - _Making_ the power of `IPFS` more _accessible_
+ * - _Bridging_ the gap between `IPFS` and `Browser`
+ * - _Empowering_ the person with `facility`
+*/
 /**
  * --------------------------------------------------------------------------
  * IBIPFS (v0.2.0): ibipfs.js

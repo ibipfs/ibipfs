@@ -38,8 +38,8 @@
       		break
       }
 
-		  newLoadedElem.onerror = () => {
-		  	throw new URIError("The script " + oError.target.src + " didn't load correctly.")
+		  newLoadedElem.onerror = (oError) => {
+		  	throw new URIError("The script " + oError.target.src + "  didn't load correctly.")
 		  }
 
 		  if (onloadFunction) {
