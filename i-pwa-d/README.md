@@ -14,7 +14,7 @@ Navigate to the root of the directory you cloned and run:
 $ npm install
 ```
 
-Step 3: Run the scripts as needed
+Step 3: Run the `scripts` as needed
 
 :eyes: `package.json`
 

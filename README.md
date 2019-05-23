@@ -1,12 +1,16 @@
-# Be All I(PFS) Can Be In Web Browser
+# IBIPFS(in-browser ipfs-distributed web)
+
+> IBIPFS is the distributed web in the web[browsers].
+
+[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmaJUWKES8YdHQHDFUK3qacQFuicVZnGNxyfYtbz3x7BG3/)
 
 ### Features
 
 - _Making_ the power of `IPFS` more _accessible_
 - _Bridging_ the gap between `IPFS` and `Browser`
-- _Empowering_ the person with `facility`
+- _Empowering_ the person with `facilities`
 
-### Usage
+### Usage for builders :eyes: [./i-pwa-d](./i-pwa-d)
 
 Step 1: Make sure you clone `recursively`
 
@@ -22,7 +26,7 @@ Navigate to the root of the directory you cloned and run:
 $ npm install
 ```
 
-Step 3: Run the scripts as needed
+Step 3: Run the `scripts` as needed
 
 :eyes: `package.json`
 
