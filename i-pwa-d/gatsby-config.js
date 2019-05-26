@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'IBIPFS: Be All I(PFS) Can Be In Web Browser'
+    title: 'IBIPFS: In-browser IPFS-distributed Web'
   },
   pathPrefix: '__GATSBY_IPFS_PATH_PREFIX__',
   plugins: [
@@ -11,8 +11,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Fashion.SNS',
-        short_name: 'Fashion.SNS',
+        name: 'IBIPFS',
+        short_name: 'IBIPFS',
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',

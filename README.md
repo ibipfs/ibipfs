@@ -1,14 +1,24 @@
-# IBIPFS(in-browser ipfs-distributed web)
+# IBIPFS(In-browser IPFS-distributed Web)
 
 > IBIPFS is the distributed web in the web[browsers].
 
-[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmaJUWKES8YdHQHDFUK3qacQFuicVZnGNxyfYtbz3x7BG3/)
+[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmQYAg6FvWfCwd1wy6vjGSLpfJavyfS8DcHmEyAyM7pWaw/)
+
+
+> _**May You Be Looking Forward To ...**_
+- Joining for Joy
+- * Searching the Searches // Google-alike search, Personal-generated content space(indexes)
+- * - [IPFS-Search](https://github.com/ipfs-search) as foundation?
+- Share the Shine
+- * Personal, Social, Universal // The most personal is the most general
+- Lucky x Lottery
+- * Crypto-currency Counts Countlessly // Gifts might be given to gifted people just like lottery
 
 ### Features
 
 - _Making_ the power of `IPFS` more _accessible_
 - _Bridging_ the gap between `IPFS` and `Browser`
-- _Empowering_ the person with `facilities`
+- _Empowering_ the person with `facilities` and `privileges`
 
 ### Usage for builders :eyes: [./i-pwa-d](./i-pwa-d)
 
@@ -32,12 +42,14 @@ Step 3: Run the `scripts` as needed
 
 ### Forwarding
 
-_**doing**_ `v 0.3.*` - transform[facility]
+_**doing**_ `v 1.0.*` - transform[facility]
+- `ipad`(IPFS-PWA-Distributed)
+- `Browserify/Upgrade` of `jsipfs`, as the `ibipfs.js`
+- `p2p` - Personal to personal distribution of privileges(Information&Tools)
 
-`v 0.3.1` - `Browserify/Upgrade` of `jsipfs`, as the `ibipfs.js`
-
-:done:
-
+_**done**_
+---
+`v 0.3.1` - Wrapping up the [ipfs-search.com](https://ipfs-search.com) as IFrame
 ---
 `v 0.3.0` - template[accessibility]
 - `Gateway` to the IPFS web, with enhanced infrastructural settings and support
@@ -59,3 +71,4 @@ _**doing**_ `v 0.3.*` - transform[facility]
 
 - [/ipfs/in-web-browsers](https://github.com/ipfs/in-web-browsers)
 - * JS-IPFS(Browser Available Portion) :eyes: [interface-js-ipfs-core](https://github.com/ipfs/interface-js-ipfs-core)
+

@@ -101,7 +101,7 @@
   "magic": {
     "sectionTitle": "Magic",
     "sectionDesc": "This is where magic happens! :)",
-    "activationSuccessTitle": "Congratulations! Here is the magic proudly built for and dedicated to you:",
+    "activationSuccessTitle": "Congratulations! Here is the magical service worker for you:",
     "activationSuccessText": "Here are some examples for you to try:\n- [JS-IPFS-WWW](/ipns/js.ipfs.io)\n- [Fountainhead](/ipfs/QmYNQJoKGNHTpPxCBPh9KkDpaExgd2duMa3aF6ytMpHdao)\n- [Magic for You](https://github.com/snspace/http2ipfs/issues)",
     "toggleText": "Enable Service Worker",
     "activatingToggleText": "Activating Service Worker...",
