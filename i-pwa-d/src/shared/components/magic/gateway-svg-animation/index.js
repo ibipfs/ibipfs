@@ -48,6 +48,7 @@ import styles from './index.module.css'
 
 const jsipfswww = window.location.pathname + 'ipns/js.ipfs.io'
 const fountainhead = window.location.pathname + 'ipfs/QmYNQJoKGNHTpPxCBPh9KkDpaExgd2duMa3aF6ytMpHdao'
+const dwebpage = window.location.pathname + 'ipfs/QmaG6gCPHBKEvQtCTG7ELa1J1fh9K7iitcCwrWponxFydy'
 
 class GatewaySvgAnimation extends Component {
   render () {
@@ -74,8 +75,10 @@ class GatewaySvgAnimation extends Component {
           <div className={ styles.body }>
             Here are some examples for you to try:
             <ul>
-              <li><a href={ jsipfswww } target="_blank">JS-IPFS-WWW</a></li>
-              <li><a href={ fountainhead } target="_blank">Fountainhead</a></li>
+              <li><a href={ jsipfswww } target="_blank">JS-IPFS: A full P2P protocol written entirely in JavaScript</a></li>
+              <li><a href={ fountainhead } target="_blank">Fountainhead: IPFS is the Distributed Web</a></li>
+              <li><a href={ dwebpage } target="_blank">DWeb.page: Share and search content on the distributed web</a></li>
+              <li><a href="https://ipfs.ink/" target="_blank">ipfs.ink: Publish markdown essays with one-click</a></li>
               <li><a href="https://github.com/snspace/http2ipfs/issues" target="_blank">Magic for You</a></li>
             </ul>
           </div>

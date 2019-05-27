@@ -2,7 +2,7 @@
 
 > IBIPFS is the distributed web in the web[browsers].
 
-[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmVuXwC6nRNotry7aJVoijR2mjrVf3xqENGwVbygXEPw3K/)
+[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmeUtEHWDFSfimyyyj228vCBHVVGXpYFRKZhnJoM36y1jz/)
 
 
 > _**May You Be Looking Forward To ...**_
@@ -48,6 +48,8 @@ _**doing**_ `v 1.0.*` - transform[facility]
 - `p2p` - Personal to personal distribution of privileges(Information&Tools)
 
 _**done**_
+---
+`v 0.3.2` - Listing more resources(Dweb.page and ipfs.ink)
 ---
 `v 0.3.1` - Wrapping up the [ipfs-search.com](https://ipfs-search.com) as IFrame
 ---
