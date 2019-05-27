@@ -1,7 +1,7 @@
 {
   "name": "i-pwa-d",
   "description": "MagicTemplate for IPFS-based distributed web development",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "keywords": [
     "distributed",
     "web",
