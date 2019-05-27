@@ -6,10 +6,11 @@ import classNames from 'classnames'
 import { isCompatible, register, unregister, getRegistration } from 'service-worker/registration'
 import Observer from '@researchgate/react-intersection-observer'
 
+import { MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBIframe } from 'mdbreact'
+
 import ToggleButton from './toggle-button'
 import styles from './index.module.css'
-
-import { MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBIframe } from 'mdbreact'
+import IPFSearchIframe from '../search'
 
 const scrollToComponent = typeof window !== 'undefined' && require('react-scroll-to-component')
 const defaultScrollOptions = { offset: 0, align: 'bottom', duration: 600 }
@@ -71,25 +72,20 @@ class GatewaySection extends Component {
               <MDBCardBody>
                 <MDBContainer>
                   <MDBRow>
-                    <MDBCol md="9">
+                    <MDBCol md="6">
                       <MDBInput hint="<iRecord@ipfs> e.g. js.ipfs.io" getValue={ this.handleIwant } />
                     </MDBCol>
                     <MDBCol md="1">
                       <MDBBtn onClick={ this.handleIRecordGo }>Go</MDBBtn>
                     </MDBCol>
-                    <MDBCol md="1">
+                    <MDBCol md="2">
                       <MDBBtn onClick={ this.fetchIRecord }>Update</MDBBtn>
+                    </MDBCol>
+                    <MDBCol md="3">
+                      <IPFSearchIframe />
                     </MDBCol>
                   </MDBRow>
                 </MDBContainer>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBContainer>
-          <br/>
-          <MDBContainer>
-            <MDBCard>
-              <MDBCardBody>
-                <MDBIframe src="https://ipfs-search.com" />
               </MDBCardBody>
             </MDBCard>
           </MDBContainer>
