@@ -78,10 +78,12 @@ class GatewaySection extends Component {
                     <MDBCol md="1">
                       <MDBBtn onClick={ this.handleIRecordGo }>Go</MDBBtn>
                     </MDBCol>
-                    <MDBCol md="2">
+                    <MDBCol md="1" />
+                    <MDBCol md="1">
                       <MDBBtn onClick={ this.fetchIRecord }>Update</MDBBtn>
                     </MDBCol>
-                    <MDBCol md="3">
+                    <MDBCol md="1" />
+                    <MDBCol md="2">
                       <IPFSearchIframe />
                     </MDBCol>
                   </MDBRow>
