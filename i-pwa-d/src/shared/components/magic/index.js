@@ -64,56 +64,61 @@ class GatewaySection extends Component {
     })
 
     return (
-      <div className={ styles.container } ref={ this.handleContainerRef }>
-        <div className={ contentClasses }>
-          <h1>Magic</h1>
-          <MDBContainer>
-            <MDBCard>
-              <MDBCardBody>
-                <MDBContainer>
-                  <MDBRow>
-                    <MDBCol md="6">
-                      <MDBInput hint="<iRecord@ipfs> e.g. js.ipfs.io" getValue={ this.handleIwant } />
-                    </MDBCol>
-                    <MDBCol md="1">
-                      <MDBBtn onClick={ this.handleIRecordGo }>Go</MDBBtn>
-                    </MDBCol>
-                    <MDBCol md="1" />
-                    <MDBCol md="1">
-                      <MDBBtn onClick={ this.fetchIRecord }>Update</MDBBtn>
-                    </MDBCol>
-                    <MDBCol md="1" />
-                    <MDBCol md="2">
-                      <IPFSearchIframe />
-                    </MDBCol>
-                  </MDBRow>
-                </MDBContainer>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBContainer>
-          <div className={ styles.gatewayContainer }>
-            { GatewaySvgAnimation &&
-              <Observer onChange={ this.handleObserverChange }>
-                <GatewaySvgAnimation
-                  isActive={ isActive }
-                  inView={ inView }
-                  isMessageVisible={ isMessageVisible }
-                  onMessageCloseClick={ this.handleCloseClick }
-                />
-              </Observer>
-            }
+      <div>
+        <div className={ styles.container } ref={ this.handleContainerRef }>
+          <div className={ contentClasses }>
+            <h1>Magic</h1>
+            <MDBContainer>
+              <MDBCard>
+                <MDBCardBody>
+                  <MDBContainer>
+                    <MDBRow>
+                      <MDBCol md="6">
+                        <MDBInput hint="<iRecord@ipfs> e.g. js.ipfs.io" getValue={ this.handleIwant } />
+                      </MDBCol>
+                      <MDBCol md="1">
+                        <MDBBtn onClick={ this.handleIRecordGo }>Go</MDBBtn>
+                      </MDBCol>
+                      <MDBCol md="1" />
+                      <MDBCol md="1">
+                        <MDBBtn onClick={ this.fetchIRecord }>Update</MDBBtn>
+                      </MDBCol>
+                      <MDBCol md="1" />
+                      <MDBCol md="2">
+                        <IPFSearchIframe />
+                      </MDBCol>
+                    </MDBRow>
+                  </MDBContainer>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBContainer>
+            <div className={ styles.gatewayContainer }>
+              { GatewaySvgAnimation &&
+                <Observer onChange={ this.handleObserverChange }>
+                  <GatewaySvgAnimation
+                    isActive={ isActive }
+                    inView={ inView }
+                    isMessageVisible={ isMessageVisible }
+                    onMessageCloseClick={ this.handleCloseClick }
+                  />
+                </Observer>
+              }
+            </div>
+            <ToggleButton
+              id="serviceWorkerButton"
+              isActive={ isActive }
+              onClick={ this.handleToggleClick }
+              className={ styles.toggle }
+              incompatible={ incompatible }
+              inProgress={ inProgress } />
+            <ToastContainer
+              className={ styles.toastContainer }
+              transition={ Slide }
+              pauseOnHover={ false } />
           </div>
-          <ToggleButton
-            id="serviceWorkerButton"
-            isActive={ isActive }
-            onClick={ this.handleToggleClick }
-            className={ styles.toggle }
-            incompatible={ incompatible }
-            inProgress={ inProgress } />
-          <ToastContainer
-            className={ styles.toastContainer }
-            transition={ Slide }
-            pauseOnHover={ false } />
+        </div>
+        <div className={ styles.container }>
+          <iframe height="600" width="100%" src="https://ipfs-search.com"></iframe>
         </div>
       </div>
     )
