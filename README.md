@@ -43,15 +43,18 @@ Step 3: Run the `scripts` as needed
 ### Forwarding
 
 _**doing**_ `v 1.0.*` - transform[facility]
-- `ipad`(IPFS-PWA-Distributed)
-- `Browserify/Upgrade` of `jsipfs`, as the `ibipfs.js`
-- `p2p` - Personal to personal distribution of privileges(Information&Tools)
+- `ippad`(IPFS-PWA-PSW-Distributed)
+- `browserify/upgrade` of `jsipfs`, as the `ibipfs.js`
+- `p2p` - personal to personal distribution of privileges(Information&Tools)
 
 _**done**_
+
 ---
 `v 0.3.2` - Listing more resources(Dweb.page and ipfs.ink)
+
 ---
 `v 0.3.1` - Wrapping up the [ipfs-search.com](https://ipfs-search.com) as IFrame
+
 ---
 `v 0.3.0` - template[accessibility]
 - `Gateway` to the IPFS web, with enhanced infrastructural settings and support
