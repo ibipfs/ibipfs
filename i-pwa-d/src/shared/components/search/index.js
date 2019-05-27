@@ -3,6 +3,7 @@ import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalFooter, MDBIframe
 import styles from './index.module.css'
 
 class IPFSearchIframe extends Component {
+
 state = {
   modal11: false,
 }
@@ -15,6 +16,20 @@ toggle = nr => () => {
   });
 }
 
+toggleFullscreen = nl => () => {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem
+    .requestFullscreen()
+    .catch(err => {
+      alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}
+
 render() {
   return (
     <MDBContainer>
@@ -24,8 +39,11 @@ render() {
           <MDBIframe className={ styles.container } ratio="21by9" scrolling="auto" allowFullScreen title="The InterPlanetary Search" src="https://ipfs-search.com" />
         </MDBModalBody>
         <MDBModalFooter className="justify-content-center">
-          <MDBBtn color="primary" outline rounded size="md" className="ml-4" onClick={this.toggle(33)}>
+          <MDBBtn color="primary" outline rounded size="md" className="ml-3" onClick={this.toggle(33)}>
             Close
+          </MDBBtn>
+          <MDBBtn color="primary" outline rounded size="md" className="ml-3" onClick={this.toggleFullscreen()}>
+            FullScreen
           </MDBBtn>
         </MDBModalFooter>
       </MDBModal>
