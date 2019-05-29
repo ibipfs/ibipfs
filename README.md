@@ -2,7 +2,7 @@
 
 > IBIPFS is the distributed web in the web[browsers].
 
-[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmeUtEHWDFSfimyyyj228vCBHVVGXpYFRKZhnJoM36y1jz/)
+[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmZTdCTmH6qh1MNTKF7QiWy6BUw9L9Lp5ctDc5L2undkz5/)
 
 
 > _**May You Be Looking Forward To ...**_
@@ -43,11 +43,14 @@ Step 3: Run the `scripts` as needed
 ### Forwarding
 
 _**doing**_ `v 1.0.*` - transform[facility]
-- `ippad`(IPFS-PWA-PSW-Distributed)
+- `ippad`(IPFS-PSW-PWA-Distributed)
 - `browserify/upgrade` of `jsipfs`, as the `ibipfs.js`
 - `p2p` - personal to personal distribution of privileges(Information&Tools)
 
 _**done**_
+
+---
+`v 0.3.3` - Adding `dDrop` for sharing files
 
 ---
 `v 0.3.2` - Listing more resources(Dweb.page and ipfs.ink)
@@ -63,10 +66,13 @@ _**done**_
 - * Extended pluggable infrastructure(preloader, ...) supplementing the officials
 - `MagicTemplate` for IPFS-based distributed web development
 - * Based on [js.ipfs.io](https://github.com/ipfs/js.ipfs.io)
+
 ---
 - ibipfs.js - v 0.2.0 - window.ibipfs
+
 ---
 - ibipfs.js - v 0.1.9 - local jsipfs fallback
+
 ---
 - ibipfs.js - v 0.1.1 - apriori
 - iEvolve() // with CodeMirror :trial:

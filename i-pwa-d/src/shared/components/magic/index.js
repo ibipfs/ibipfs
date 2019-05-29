@@ -67,7 +67,6 @@ class GatewaySection extends Component {
       <div>
         <div className={ styles.container } ref={ this.handleContainerRef }>
           <div className={ contentClasses }>
-            <h1>Magic</h1>
             <MDBContainer>
               <MDBCard>
                 <MDBCardBody>
@@ -116,6 +115,9 @@ class GatewaySection extends Component {
               transition={ Slide }
               pauseOnHover={ false } />
           </div>
+        </div>
+        <div className={ styles.container }>
+          <iframe height="363" width="100%" src="https://ddrop.edening.net"></iframe>
         </div>
         <div className={ styles.container }>
           <iframe height="600" width="100%" src="https://ipfs-search.com"></iframe>
