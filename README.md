@@ -44,8 +44,16 @@ Step 3: Run the `scripts` as needed
 
 _**doing**_ `v 1.0.*` - transform[facility]
 - `ippad`(IPFS-PSW-PWA-Distributed)
-- `browserify/upgrade` of `jsipfs`, as the `ibipfs.js`
+- `browserify/simplify/upgrade` of `jsipfs`, as the `ibipfs.js`, which prefers advanced vanilla JS/ES
+- * `ibipfs.js` would be the faithful `frontier` of `jsipfs`, which reasonably gonna includes the `nodejs`, `i` care my bros' only.
+- * `ibipfs.js` would like to being a bridge to the quickly drifting distributed world of the `jsipfs`. // Self-evolving?
+- * `ibipfs.js` would like to being a `plug&play` wherever possible inside the web/browser.
+:eyes: [js-ipfs/examples/`*browser*`](https://github.com/ipfs/js-ipfs/tree/master/examples)
+:eyes: [interface-js-ipfs-core](https://github.com/ipfs/interface-js-ipfs-core)
+:eyes: [js-ipfsd-ctl: Control an IPFS daemon (go-ipfs or js-ipfs) using JavaScript!](https://github.com/ipfs/js-ipfsd-ctl)
 - `p2p` - personal to personal distribution of privileges(Information&Tools)
+
+? _**Personal Social Universe**_ ?
 
 _**done**_
 

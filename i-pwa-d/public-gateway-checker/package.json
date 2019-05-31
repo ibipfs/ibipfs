@@ -1,0 +1,8 @@
+{
+  "name": "public-gateway-checker",
+  "version": "0.0.1",
+  "description": "Checker for IPFS Public Gateways.",
+  "main": "index.js",
+  "dependencies": {
+  }
+}
