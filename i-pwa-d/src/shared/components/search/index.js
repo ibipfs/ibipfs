@@ -5,7 +5,7 @@ import styles from './index.module.css'
 class IPFSearchIframe extends Component {
 
 state = {
-  modal11: false,
+  modal33: false,
 }
 
 toggle = nr => () => {
@@ -17,7 +17,7 @@ toggle = nr => () => {
 }
 
 toggleFullscreen = nl => () => {
-  let elem = document.querySelector("iframe");
+  let elem = document.querySelector("#isearch");
 
   if (!document.fullscreenElement) {
     elem
@@ -36,7 +36,7 @@ render() {
       <MDBBtn onClick={this.toggle(33)}>Search</MDBBtn>
       <MDBModal size="lg" isOpen={this.state.modal33} toggle={this.toggle(33)}>
         <MDBModalBody className="mb-0 p-0">
-          <MDBIframe className={ styles.container } ratio="21by9" scrolling="auto" allowFullScreen title="The InterPlanetary Search" src="https://ipfs-search.com" />
+          <MDBIframe className={ styles.container } id="isearch" ratio="21by9" scrolling="auto" allowFullScreen title="The InterPlanetary Search" src="https://ipfs-search.com" />
         </MDBModalBody>
         <MDBModalFooter className="justify-content-center">
           <MDBBtn color="primary" outline rounded size="md" className="ml-3" onClick={this.toggle(33)}>

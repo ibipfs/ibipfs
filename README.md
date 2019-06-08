@@ -42,7 +42,10 @@ Step 3: Run the `scripts` as needed
 
 ### Forwarding
 
-_**doing**_ `v 1.0.*` - transform[facility]
+_**doing** - iMemex_
+- Search - ST(Store&Trail) - Share
+
+_**going**_ `v 1.0.*` - transform[facility]
 - `ippad`(IPFS-PSW-PWA-Distributed)
 - `browserify/simplify/upgrade` of `jsipfs`, as the `ibipfs.js`, which prefers advanced vanilla JS/ES
 - * `ibipfs.js` would be the faithful `frontier` of `jsipfs`, which reasonably gonna includes the `nodejs`, `i` care my bros' only.
@@ -54,6 +57,9 @@ _**doing**_ `v 1.0.*` - transform[facility]
 ? _**Personal Social Universe**_ ?
 
 _**done**_
+
+---
+`v 0.3.9` - `iDrop` a.k.a `dDrop` - enabling `fun(global sharing space)`
 
 ---
 `v 0.3.3` - Adding `dDrop` for sharing files

@@ -10,7 +10,8 @@ import { MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBContainer, MDBRow, MDBCol, M
 
 import ToggleButton from './toggle-button'
 import styles from './index.module.css'
-import IPFSearchIframe from '../search'
+import Memex from '../memex'
+//import IPFSearchIframe from '../search'
 
 const scrollToComponent = typeof window !== 'undefined' && require('react-scroll-to-component')
 const defaultScrollOptions = { offset: 0, align: 'bottom', duration: 600 }
@@ -84,7 +85,7 @@ class GatewaySection extends Component {
                       </MDBCol>
                       <MDBCol md="1" />
                       <MDBCol md="2">
-                        <IPFSearchIframe />
+                        <Memex />
                       </MDBCol>
                     </MDBRow>
                   </MDBContainer>
@@ -117,10 +118,10 @@ class GatewaySection extends Component {
           </div>
         </div>
         <div className={ styles.container }>
-          <iframe height="363" width="100%" src="https://ddrop.edening.net"></iframe>
+          <iframe id="idrop" height="363" width="100%" src="https://ddrop.edening.net"></iframe>
         </div>
         <div className={ styles.container }>
-          <iframe height="600" width="100%" src="https://ipfs-search.com"></iframe>
+          <iframe id="isearch" height="600" width="100%" src="https://ipfs-search.com"></iframe>
         </div>
       </div>
     )
