@@ -130,7 +130,7 @@ module.exports.onCreateWebpackConfig = ({ actions, getConfig, stage }) => {
       loader: 'null-loader'
     })
     config.module.rules.unshift({
-      test: require.resolve('service-worker-gateway/node_modules/ipfs-postmsg-proxy'),
+      test: require.resolve('./service-worker-gateway/node_modules/ipfs-postmsg-proxy'),
       loader: 'null-loader'
     })
   }
