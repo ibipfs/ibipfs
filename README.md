@@ -2,7 +2,7 @@
 
 > IBIPFS is the distributed web in the web[browsers].
 
-[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmaX5hBdsqCFiuy1oPyMPE3JWGgrm2EaDxrE2dwPmFpkfE/)
+[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmcpZe2ae5jPf5wCXntbXqG2zNr6VLeNgVsiiQaooL9njA)
 
 
 > _**May You Be Looking Forward To ...**_

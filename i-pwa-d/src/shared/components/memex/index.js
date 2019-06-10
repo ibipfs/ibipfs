@@ -16,44 +16,18 @@ class Memex extends Component {
     });
   }
 
-  toggleFullscreen = nl => () => {
-    let elem = document.querySelector("#imemex");
-
-    if (!document.fullscreenElement) {
-      elem
-      .requestFullscreen()
-      .catch(err => {
-        alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-      });
-    } else {
-      document.exitFullscreen();
-    }
-  }
-
-  trails = (event) => {
-    console.log('trails: ' + event);
-    this.state.trails = event;
-  }
-
-  consult = () => {
-    alert('Consulting iMemex for: ' + this.state.trails);
-  }
-
   render() {
     return (
       <MDBContainer>
         <MDBBtn onClick={this.toggle(36)}>iMemex</MDBBtn>
-        <MDBModal modalStyle="info" size="lg" isOpen={this.state.modal36} toggle={this.toggle(36)}>
+        <MDBModal modalStyle="info" size="fluid" isOpen={this.state.modal36} toggle={this.toggle(36)}>
           <MDBModalHeader>iMemex</MDBModalHeader>
           <MDBModalBody className="mb-0 p-0">
-            <MDBIframe id="imemex" className={ styles.container } scrolling="auto" allowFullScreen title="Personal Distributed Web" src="https://service.edening.net/ipfs/QmaUT7Sd4wykeL2KLdMixZ9WiMFEdRzZpmhVHWAfLadK2w/" />
+            <MDBIframe id="imemex" className={ styles.container } scrolling="auto" allowFullScreen title="Personal Distributed Web" src="https://service.edening.net/ipfs/QmcBE83uD1UJ8SzH9Fju5ghjjCkNdFAByW7xzbTAN2BQUr/" />
           </MDBModalBody>
           <MDBModalFooter className="justify-content-center">
             <MDBBtn color="primary" outline rounded size="md" className="ml-3" onClick={this.toggle(36)}>
               Close
-            </MDBBtn>
-            <MDBBtn color="primary" outline rounded size="md" className="ml-3" onClick={this.toggleFullscreen()}>
-              FullScreen
             </MDBBtn>
           </MDBModalFooter>
         </MDBModal>

@@ -11,12 +11,13 @@ import { MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBContainer, MDBRow, MDBCol, M
 import ToggleButton from './toggle-button'
 import styles from './index.module.css'
 import Memex from '../memex'
-//import IPFSearchIframe from '../search'
 
 const scrollToComponent = typeof window !== 'undefined' && require('react-scroll-to-component')
 const defaultScrollOptions = { offset: 0, align: 'bottom', duration: 600 }
 
 const { createProxyClient } = require('service-worker-gateway/node_modules/ipfs-postmsg-proxy')
+
+let ipfs
 
 class GatewaySection extends Component {
   state = {
@@ -138,12 +139,6 @@ class GatewaySection extends Component {
   handleToggleClick = () => {
     const { messages } = this.props.intl
 
-    // Can't activate service-worker if serving from `/ipfs/xxx` or `/ipns/xxx` because
-    // it must be served from the root
-    /*if (/^\/(?:ipfs|ipns)\/[^/]+/.test(window.location.pathname)) {
-      return toast.warning(messages.magic.nonRootScopeWarningMessage)
-    }*/
-
     const { isActive } = this.state
 
     this.setState({ inProgress: true })
@@ -158,7 +153,7 @@ class GatewaySection extends Component {
     } else {
       register()
         .then(() => {
-          createProxyClient({
+          ipfs = createProxyClient({
             addListener: navigator.serviceWorker.addEventListener.bind(navigator.serviceWorker),
             postMessage: (data) => navigator.serviceWorker.controller.postMessage(data)
           })
@@ -192,14 +187,9 @@ class GatewaySection extends Component {
       return
     }
 
-    fetchIRecord() // Syncing and Retry with iRecord
+    fetchIRecord()
     .then(() => {
       handleIRecordGo()
-    })
-
-    search(event) // Google-alike search, Personal-generated content space(indexes), [IPFS-Search](https://github.com/ipfs-search)?
-    .then((res) => {
-      show(res)
     })
   }
 
@@ -230,20 +220,6 @@ class GatewaySection extends Component {
       toast.warning('Updated iRecord: ' + JSON.stringify(iRecord))
     }, (reason) => {
       toast.error('Error Updating iRecord: ' + reason)
-    })
-  }
-
-  search = (event) => {
-    if(!event.type) {
-      console.log('Searching for: ' + event + ' ...')
-
-      return new Promise((event) => {
-        // TODO: Implementation
-      })
-    }
-
-    return new Promise(() => {
-      console.log('Placeholder for Search!!!')
     })
   }
 
