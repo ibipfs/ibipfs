@@ -2,7 +2,7 @@
 
 > IBIPFS is the distributed web in the web[browsers].
 
-[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmP5JiCzUBMDJ2buGjUmsZxdaeWMJvG6CHmAyFZBVu6WJ9/)
+[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmQH7cxJVCAUrBLpVy9ouZ3xeo4WysuW4tYvqtM84hCkdT/)
 
 
 > _**May You Be Looking Forward To ...**_
@@ -43,7 +43,12 @@ Step 3: Run the `scripts` as needed
 ### Forwarding
 
 _**doing** - iMemex_
-- Search - ST(Store&Trail) - Share
+
+`Search - ST(Store&Trail) - Share`
+
+- Local(IBIPFS) Store First
+- Trails Extending Tags
+- Classical Web Inclusion
 
 _**going**_ `v 1.0.*` - transform[facility]
 - `ippad`(IPFS-PSW-PWA-Distributed)
