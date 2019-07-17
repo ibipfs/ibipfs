@@ -2,7 +2,7 @@
 
 > IBIPFS is the distributed web in the web[browsers].
 
-[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmQH7cxJVCAUrBLpVy9ouZ3xeo4WysuW4tYvqtM84hCkdT/)
+[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmZTdCTmH6qh1MNTKF7QiWy6BUw9L9Lp5ctDc5L2undkz5/)
 
 
 > _**May You Be Looking Forward To ...**_
@@ -42,13 +42,7 @@ Step 3: Run the `scripts` as needed
 
 ### Forwarding
 
-_**doing** - iMemex_
-
-`Search - ST(Store&Trail) - Share`
-
-- Local(IBIPFS) Store First
-- Trails Extending Tags
-- Classical Web Inclusion
+_**doing** - iMemex_ // `iMemex` -> (micromedias)`soshow`
 
 _**going**_ `v 1.0.*` - transform[facility]
 - `ippad`(IPFS-PSW-PWA-Distributed)
@@ -59,7 +53,6 @@ _**going**_ `v 1.0.*` - transform[facility]
 > :eyes: [js-ipfs/examples/`*browser*`](https://github.com/ipfs/js-ipfs/tree/master/examples) && [interface-js-ipfs-core](https://github.com/ipfs/interface-js-ipfs-core) && [js-ipfsd-ctl](https://github.com/ipfs/js-ipfsd-ctl)
 - `p2p` - personal to personal distribution of privileges(Information&Tools)
 
-? _**Personal Social Universe**_ ?
 
 _**done**_
 
