@@ -2,7 +2,7 @@
 
 > IBIPFS is the distributed web in the web[browsers].
 
-[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmZTdCTmH6qh1MNTKF7QiWy6BUw9L9Lp5ctDc5L2undkz5/)
+[LiveForYou@IPFSGateway](https://service.edening.net/ipfs/QmW7W6gARAfSeWNDmTvb289QCLkB8rHtmi7QeAqD5eFt9H/)
 
 
 > _**May You Be Looking Forward To ...**_
@@ -42,8 +42,6 @@ Step 3: Run the `scripts` as needed
 :eyes: `package.json`
 
 ### Forwarding
-
-_**doing** - iMemex_ // `iMemex` -> (micromedias)`soshow`
 
 _**going**_ `v 1.0.*` - transform[facility]
 - `ippad`(IPFS-PSW-PWA-Distributed)

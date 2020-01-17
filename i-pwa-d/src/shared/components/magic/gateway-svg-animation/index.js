@@ -46,11 +46,11 @@ import closeIconSvg from '../images/close-icon.sprite.svg'
 
 import styles from './index.module.css'
 
-const jsipfswww = window.location.origin + 'ipns/js.ipfs.io'
-const fountainhead = window.location.origin+ 'ipfs/QmYNQJoKGNHTpPxCBPh9KkDpaExgd2duMa3aF6ytMpHdao'
+const jsipfswww = window.location.origin + '/ipns/js.ipfs.io'
+const fountainhead = window.location.origin+ '/ipfs/QmYNQJoKGNHTpPxCBPh9KkDpaExgd2duMa3aF6ytMpHdao'
 const ddrop = 'https://ddrop.edening.net'
 const ipfsink = 'https://ipfs.ink'
-const dwebpage = window.location.origin + 'ipfs/QmaG6gCPHBKEvQtCTG7ELa1J1fh9K7iitcCwrWponxFydy'
+const dwebpage = window.location.origin + '/ipfs/QmaG6gCPHBKEvQtCTG7ELa1J1fh9K7iitcCwrWponxFydy'
 const magicforyou = 'https://github.com/snspace/http2ipfs/issues'
 
 class GatewaySvgAnimation extends Component {
