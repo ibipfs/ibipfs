@@ -7,6 +7,7 @@
 
 > _**May You Be Looking Forward To ...**_
 - Joining for Joy
+- * FileCoin Empowered DSN(Distributed Storage Network)
 - * Searching the Searches // Google-alike search, Personal-generated content space(indexes)
 - * - [IPFS-Search](https://github.com/ipfs-search) as foundation?
 - Share the Shine
