@@ -75,14 +75,10 @@ class GatewaySection extends Component {
                   <MDBContainer>
                     <MDBRow>
                       <MDBCol md="6">
-                        <MDBInput hint="<iRecord@ipfs> e.g. js.ipfs.io" getValue={ this.handleIwant } />
+                        <MDBInput hint="<iRecord@ipns|ipfs> e.g. js.ipfs.io" getValue={ this.handleIwant } />
                       </MDBCol>
                       <MDBCol md="1">
                         <MDBBtn onClick={ this.handleIRecordGo }>Go</MDBBtn>
-                      </MDBCol>
-                      <MDBCol md="1" />
-                      <MDBCol md="1">
-                        <MDBBtn onClick={ this.fetchIRecord }>Update</MDBBtn>
                       </MDBCol>
                       <MDBCol md="1" />
                       <MDBCol md="2">
